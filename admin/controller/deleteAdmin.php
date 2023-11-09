@@ -1,13 +1,13 @@
 <?php
 
-require $_SERVER["DOCUMENT_ROOT"] . '/simpleAdmin/config/dbconnect.php';
+require $_SERVER["DOCUMENT_ROOT"] . '/expert_system/config/database.php';
 
 // Check if admin_id is set in the URL
-if (isset($_GET["admin_id"])) {
-    $admin_id = $_GET["admin_id"];
+if (isset($_GET["user_id"])) {
+    $admin_id = $_GET["user_id"];
 
     // Prepare and bind a DELETE statement
-    $stmt = $conn->prepare("DELETE FROM admins WHERE admin_id = ?");
+    $stmt = $conn->prepare("DELETE FROM users WHERE user_id = ?");
     $stmt->bind_param("i", $admin_id); // Assuming admin_id is an integer
 
     // Execute the DELETE query

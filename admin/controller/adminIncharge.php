@@ -9,7 +9,7 @@ if (!isset($_SESSION['admin-id'])) {
 }
 
 // Fetch the logged-in admin's details from the database
-require $_SERVER["DOCUMENT_ROOT"] . '/simpleAdmin/config/dbconnect.php';
+require $_SERVER["DOCUMENT_ROOT"] . '/expert_system/config/database.php';
 
 $admin_id = $_SESSION['admin-id'];
 $stmt = $conn->prepare("SELECT first_name FROM users WHERE user_id = ?");

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require $_SERVER["DOCUMENT_ROOT"] . '/simpleAdmin/config/dbconnect.php';
+require $_SERVER["DOCUMENT_ROOT"] . '/expert_system/config/database.php';
 
 // Check if the user is already logged in
 if (isset($_SESSION['user_id'])) {

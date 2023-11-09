@@ -1,29 +1,29 @@
 <?php
 
-require $_SERVER["DOCUMENT_ROOT"] . '/simpleAdmin/config/dbconnect.php';
+require $_SERVER["DOCUMENT_ROOT"] . '/expert_system/config/database.php';
 
-$sql = "SELECT * FROM users WHERE deleted_at IS null";
+$sql = "SELECT * FROM users WHERE type='admin' and deleted_at IS null";
 $result = $conn->query($sql);
 
 $conn->close();
         while ($row = $result->fetch_assoc()) {
             // Check if the logged-in admin's first name is "admin"
             // If it is, they can delete other admins (excluding themselves)
-            if ($admin_first_name === "admin" && $row['admin_first_name'] !== "admin") {
-                $deleteLink = '<a href="javascript:void(0);" onclick="confirmDelete(' . $row['admin_id'] . ')">Delete</a>';
-            } else {
-                // Admin with other names or "admin" itself can't delete
-                $deleteLink = 'Not Authorized';
-            }
+            if ($admin_first_name === "admin" && $row['first_name'] !== "admin") {
+              $deleteLink = '<a href="javascript:void(0);" class="bg-[#a07f7e] hover:bg-[#864543] text-white py-1 px-2 rounded" onclick="confirmDelete(' . $row['user_id'] . ')">Delete</a>';
+          } else {
+              // Admin with other names or "admin" itself can't delete
+              $deleteLink = 'Not Authorized';
+          }
         ?>
-            <tr>
-                <td><?php echo $row['user_id']; ?></td>
-                <td>
-                    <?php echo $row['first_name']; ?>
-                    <?php echo $row['last_name']; ?>
-                </td>
-                <td><?php echo $row['email']; ?></td>
-                <td><?php echo $row['pass']; ?></td>
-                <td><?php echo $deleteLink; ?></td>
-            </tr>
-        <?php } ?>
+<tr>
+  <td class='py-2 px-4 border-r-2 text-center border-b'><?php echo $row['user_id']; ?></td>
+  <td class='py-2 px-4 border-r-2 border-b'>
+    <?php echo ucfirst($row['first_name']); ?>
+    <?php echo ucfirst($row['last_name']); ?>
+  </td>
+  <td class='py-2 px-4 border-r-2 border-b'><?php echo $row['email']; ?></td>
+  <td class='py-2 px-4 border-r-2 text-center border-b'><?php echo $row['pass']; ?></td>
+  <td class='py-2 px-4 border-r-2 text-center border-b'><?php echo $deleteLink; ?></td>
+</tr>
+<?php } ?>

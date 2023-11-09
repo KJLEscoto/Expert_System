@@ -1,7 +1,6 @@
 <?php
-session_start();
 
-require $_SERVER["DOCUMENT_ROOT"] . '/simpleAdmin/config/dbconnect.php';
+require $_SERVER["DOCUMENT_ROOT"] . '/expert_system/config/database.php';
 
 $sql = "SELECT r.result_id, r.user_id, u.first_name, u.last_name, r.result, r.created_at 
         FROM result r 
@@ -17,13 +16,13 @@ if (isset($_POST['result_id'])) {
     include("../confirm-modal.php");
 }
 
-echo "<table class='w-full border-2 border-black'>";
-echo "<tr class='border-2 border-black'>";
-echo "<th class='border-2 border-black'>User</th>";
-echo "<th class='border-2 border-black'>Result</th>";
-echo "<th class='border-2 border-black'>Diagnosis</th>";
-echo "<th class='border-2 border-black'>Date Taken</th>";
-echo "<th class='border-2 border-black'>Action</th>";
+echo "<table class='w-full bg-white border border-gray-300 rounded-md overflow-hidden shadow-md'>";
+echo "<tr class='bg-gray-200 border-b-2'>";
+echo "<th class='py-2 px-4 border-r-2'>User</th>";
+echo "<th class='py-2 px-4 border-r-2'>Result</th>";
+echo "<th class='py-2 px-4 border-r-2'>Diagnosis</th>";
+echo "<th class='py-2 px-4 border-r-2'>Date Taken</th>";
+echo "<th class='py-2 px-4'>Action</th>";
 echo "</tr>";
 
 while ($row = $result->fetch_assoc()) {
@@ -47,26 +46,26 @@ while ($row = $result->fetch_assoc()) {
     // Check if the current user is the same as the previous one
     if ($previousUserId !== $row['user_id']) {
         if ($countResults > 0) {
-            echo "</tr class='border-2 border-black'>";
+            echo "</tr>";
         }
         $countResults = 0;
         $previousUserId = $row['user_id'];
-        echo "<tr class='border-2 border-black'>";
+        echo "<tr>";
         $numRows = getNumRows($row['user_id'], $conn);
-        echo "<td rowspan='$numRows' class='border-2 border-black'>" . $row['user_id'] . " - " . $row['first_name'] . " " . $row['last_name']  . "</td>";
+        echo "<td rowspan='$numRows' class='py-2 px-4 border-r-2 border-b'>" . $row['user_id'] . " - " . ucfirst($row['first_name']) . " " . ucfirst($row['last_name'])  . "</td>";
     }
 
     if ($countResults > 0) {
         echo "</tr>";
-        echo "<tr class='border-2 border-black'>";
+        echo "<tr>";
     }
 
-    echo "<td class='border-2 border-black'>" . $row['result'] . "</td>";
-    echo "<td class='border-2 border-black'>" . $diagnosis . "</td>";
-    echo "<td class='border-2 border-black'>" . $row['created_at'] . "</td>";
-    echo '<td class="border-2 border-black"><form method="post" action="">
+    echo "<td class='py-2 px-4 border-r-2 text-center border-b'>" . $row['result'] . "</td>";
+    echo "<td class='py-2 px-4 border-r-2 border-b'>" . $diagnosis . "</td>";
+    echo "<td class='py-2 px-4 border-r-2 text-center border-b'>" . $row['created_at'] . "</td>";
+    echo '<td class="py-2 px-4 border-r-2 text-center border-b"><form method="post" action="">
     <input type="hidden" name="result_id" value="' . $row['result_id'] . '">
-    <input type="submit" value="Delete">
+    <input type="submit" class="bg-[#a07f7e] hover:bg-[#864543] text-white py-1 px-2 rounded" value="Delete">
     </form></td>';
     $countResults++;
 }

@@ -58,23 +58,24 @@
     </nav>
   </section>
 
-  <section class="print-page flex items-center justify-center" id="invoice">
+  <section class="print-page md:text-base text-xs flex items-center justify-center" id="invoice">
 
     <div class="max-w-6xl h-auto bg-gray-100 m-10 p-20 overflow-y-auto shadow-lg">
 
       <section class="md:flex block justify-between mb-20 items-center">
-        <div class="flex items-center m-auto">
+        <div class="flex items-center justify-center">
           <img class="w-auto md:h-14 h-8 mr-2" src="../img/sti.png" alt="">
-          <h1 class="md:text-2xl text-lg font-bold text-[#005BAB] cursor-default">
+          <h1 class="md:text-2xl text-center text-lg font-bold text-[#005BAB] cursor-default">
             <?php echo "College - Davao"; ?>
           </h1>
         </div>
-        <h1 class="text-[#005BAB] font-medium md:text-2xl text-base">PsycheAssist | BSCS</h1>
+        <hr class="border mb-2 mt-2 md:hidden block">
+        <h1 class="text-[#005BAB] font-medium md:text-2xl text-base md:text-end text-center">PsycheAssist | BSCS</h1>
       </section>
 
       <section class="text-center mb-20">
-        <h1 class="font-bold text-3xl text-[#005BAB]">Self-report Questionnaire Result</h1>
-        <h4 class="font-medium text-[#F4A414]">Beck Depression Inventory (BDI)</h4>
+        <h1 class="font-bold md:text-3xl text-lg text-[#005BAB]">Self-report Questionnaire Result</h1>
+        <h4 class="font-medium text-[#F4A414] md:text-lg text-sm">Beck Depression Inventory (BDI)</h4>
       </section>
 
       <div class="w-full bg-[#005BAB] text-white px-2 mb-3 font-bold">
@@ -85,9 +86,13 @@
         <?php
           require('../query/fetch-user.php');
         ?>
-        <p><span>Name:</span> <?php echo ucfirst($row['first_name']) . " " . ucfirst($row['last_name']);?></p>
-        <p><span>Age:</span> <?php echo $row['age'];?></p>
-        <p><span>E-mail:</span> <?php echo $row['email'];?></p>
+        <p><span>Name:</span> <span
+            class="w-full bg-gray-200 font-normal px-2 rounded-sm"><?php echo ucfirst($row['first_name']) . " " . ucfirst($row['last_name']);?></span>
+        </p>
+        <p><span>Age:</span> <span
+            class="w-full bg-gray-200 font-normal px-2 rounded-sm"><?php echo $row['age'];?></span></p>
+        <p><span>E-mail:</span> <span
+            class="w-full bg-gray-200 font-normal px-2 rounded-sm"><?php echo $row['email'];?></span></p>
 
         <?php 
       $_SESSION['fk-user-id'] = $user_id; // Use the $user_id variable retrieved from fetch-user.php
@@ -104,20 +109,23 @@
 
       <div class="px-2">
         <div class="flex justify-between flex-col-reverse md:flex-row">
-          <p><span>Result:</span> <?php echo $row['result'];?></p>
-          <p><span>Date Taken:</span> <?php echo $row['created_at'];?></p>
+          <p><span>Result:</span> <span
+              class="w-full bg-gray-200 font-normal px-2 rounded-sm"><?php echo $row['result'];?></span></p>
+          <p><span>Date Taken:</span> <span
+              class="w-full bg-gray-200 font-normal px-2 rounded-sm"><?php echo $row['created_at'];?></span></p>
         </div>
 
         <?php $result1 = $row['result']; } 
           include("../query/diagnose.php"); 
         ?>
 
-        <p><span>Diagnosis:</span> <?php echo $diagnose;?></p>
+        <p><span>Diagnosis:</span> <span
+            class="w-full bg-gray-200 font-normal px-2 rounded-sm"><?php echo $diagnose;?></span></p>
         <p><span>Recommendation:</span> <?php echo $reco;?></p>
       </div>
 
       <section class="px-2 mt-7">
-        <h3 class="text-2xl font-bold mb-3 cursor-default text-[#005BAB] text-center">STI 😎 With Healthy
+        <h3 class="md:text-2xl text-lg font-bold mb-3 cursor-default text-[#005BAB] text-center">STI 😎 With Healthy
           Lifestyle
         </h3>
         <p>

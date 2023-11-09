@@ -60,23 +60,24 @@
       require ('../query/fetch-user.php');
     ?>
 
-    <section class="print-page flex items-center justify-center" id="invoice">
+    <section class="print-page md:text-base text-xs flex items-center justify-center" id="invoice">
 
       <div class="max-w-6xl h-auto bg-gray-100 m-10 p-20 overflow-y-auto shadow-lg">
 
-        <section class="flex justify-between mb-20 items-center">
-          <div class="flex items-start">
-            <img class="w-auto h-14 mr-2" src="../img/sti.png" alt="">
-            <h1 class="text-2xl font-bold text-[#005BAB] cursor-default tracking-wide m-auto">
+        <section class="md:flex block justify-between mb-20 items-center">
+          <div class="flex items-center justify-center">
+            <img class="w-auto md:h-14 h-8 mr-2" src="../img/sti.png" alt="">
+            <h1 class="md:text-2xl text-center text-lg font-bold text-[#005BAB] cursor-default">
               <?php echo "College - Davao"; ?>
             </h1>
           </div>
-          <h1 class="text-[#005BAB] font-medium text-2xl">PsycheAssist | BSCS</h1>
+          <hr class="border mb-2 mt-2 md:hidden block">
+          <h1 class="text-[#005BAB] font-medium md:text-2xl text-base md:text-end text-center">PsycheAssist | BSCS</h1>
         </section>
 
         <section class="text-center mb-20">
-          <h1 class="font-bold text-3xl text-[#005BAB]">Self-report Questionnaire Result</h1>
-          <h4 class="font-medium text-[#F4A414]">Beck Depression Inventory (BDI)</h4>
+          <h1 class="font-bold md:text-3xl text-lg text-[#005BAB]">Self-report Questionnaire Result</h1>
+          <h4 class="font-medium text-[#F4A414] md:text-lg text-sm">Beck Depression Inventory (BDI)</h4>
         </section>
 
         <div class="w-full bg-[#005BAB] text-white px-2 mb-3 font-bold">
@@ -110,13 +111,17 @@
                   $result = $resultsArray[$result_id - 1];
                   echo "<div class='px-2'>";
                   echo "<div class='flex justify-between flex-col-reverse md:flex-row'>";
-                  echo "<p><span>Result ID:</span> " . $result['result_id'] . "</p>";
-                  echo "<h4><span>Date Taken:</span> " . $result['created_at'] . "</h4>";
+                  echo "<p><span>Result ID:</span> <span
+                  class='w-full bg-gray-200 font-normal px-2 rounded-sm'>" . $result['result_id'] . "</span></p>";
+                  echo "<h4><span>Date Taken:</span> <span
+                  class='w-full bg-gray-200 font-normal px-2 rounded-sm'>" . $result['created_at'] . "</span></h4>";
                   echo "</div>";
-                  echo "<p><span>Overall Score:</span> " . $result['result'] . "</p>";
+                  echo "<p><span>Overall Score:</span> <span
+                  class='w-full bg-gray-200 font-normal px-2 rounded-sm'>" . $result['result'] . "</spam></p>";
                   $result1 = $result['result'];
                   include("../query/diagnose.php"); 
-                  echo "<p><span>Diagnosis:</span> " . $diagnose . "</p>" ;
+                  echo "<p><span>Diagnosis:</span> <span
+                  class='w-full bg-gray-200 font-normal px-2 rounded-sm'>" . $diagnose . "</span></p>" ;
                   echo "<p><span>Recommendation:</span> " . $reco . "</p>" ;
                   echo "</div>";
               } else {
@@ -135,7 +140,7 @@
         ?>
 
         <section class="px-2 mt-7">
-          <h3 class="text-2xl font-bold mb-3 cursor-default text-[#005BAB] text-center">STI 😎 With Healthy
+          <h3 class="md:text-2xl text-lg font-bold mb-3 cursor-default text-[#005BAB] text-center">STI 😎 With Healthy
             Lifestyle
           </h3>
           <p>

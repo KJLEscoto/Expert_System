@@ -1,6 +1,6 @@
 <?php
 session_start();
-require $_SERVER["DOCUMENT_ROOT"] . '/simpleAdmin/config/dbconnect.php';
+require $_SERVER["DOCUMENT_ROOT"] . '/expert_system/config/database.php';
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -30,7 +30,3 @@ if (isset($_POST['Yes'])) {
 
 $conn->close();
 ?>
-
-
-
-    

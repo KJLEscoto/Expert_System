@@ -1,44 +1,51 @@
 <?php
-   include_once "config/dbconnect.php";
+   include_once "../../config/database.php";
 ?>
 <!DOCTYPE html>
 <html>
-<head>
-    <!-- Other head elements -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href=".assets/css/style.css">
-</head>
-<body>
- <!-- nav -->
- <nav class="navbar navbar-expand-lg navbar-light px-5" style="background-color: #3B3131;">
-    <a class="navbar-brand ml-5" href="index.php">
-        <a href="adminDashboard.php"><img src="../assets/images/logo.png" width="80" height="80" alt="Admin"></a>
-    </a>
-    <ul class="navbar-nav ml-auto">
-        <li>
-            <div>
-                <h4 style="color:white;"><a href="../viewAdmin/createAdmin.php">Add Admin</a></h4>
-            </div>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link text-white" href="#" onclick="confirmLogout()">
-                <i class="fas fa-sign-out-alt text-white"></i> Logout
-            </a>
-        </li>
-    </ul>
-</nav>
 
-<script>
-function confirmLogout() {
+<head>
+  <!-- Other head elements -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../dist/output.css">
+</head>
+
+<body>
+  <!-- nav -->
+  <nav class="flex justify-between bg-[#3B3131] w-full h-auto md:text-base text-sm shadow-lg">
+    <div class="flex p-5 items-center">
+      <a href="adminDashboard.php"><img class="w-16 h-auto hover:scale-105" src="../assets/images/logo.png"
+          alt="Admin"></a>
+      <p class="font-semibold text-[#e7e7e7] ml-3 cursor-default">Welcome, <?php echo ucfirst($admin_first_name); ?>!
+      </p>
+    </div>
+    <div class="flex-col md:flex-row-reverse items-center flex md:px-20 px-5 md:gap-3 gap-0">
+      <a class="nav-link text-[#e7e7e7] items-center m-auto flex border bg-[#847d7c] hover:bg-[#d4d2d2] hover:text-[#5e5555] rounded-lg"
+        href="#" onclick="confirmLogout()">
+        <i class="fas fa-sign-out-alt mr-2"></i>
+        <p>Logout</p>
+      </a>
+      <h4 class="text-center items-center m-auto"><a href="../viewAdmin/createAdmin.php"
+          class="hover:no-underline text-[#e7e7e7] hover:text-[#aba6a6]">+
+          Add Admin</a>
+      </h4>
+    </div>
+
+
+  </nav>
+
+  <script>
+  function confirmLogout() {
     var result = confirm("Are you sure you want to log out?");
     if (result) {
-        // Redirect to the logout page or perform your logout action here
-        window.location.href = "../../index.php";
+      // Redirect to the logout page or perform your logout action here
+      window.location.href = "../../index.php";
     } else {
-        // Do nothing if the user clicks Cancel
+      // Do nothing if the user clicks Cancel
     }
-}
-</script>
+  }
+  </script>
 
 </body>
+
 </html>
