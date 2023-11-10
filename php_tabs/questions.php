@@ -41,12 +41,6 @@ if (!isset($_SESSION['answers'])) {
 
 include("question-list.php");
 
-if (isset($_SESSION['answers']) && is_array($_SESSION['answers'])) { // Check if answers is an array
-  foreach ($_SESSION['answers'] as $index => $value) {
-      echo $_SESSION['answers'][$index];
-  }
-}
-
 $question_number = isset($question_number) ? $question_number : 0;
 
 $answeredQuestions = isset($_SESSION['answers']) ? count($_SESSION['answers']) : 0;
