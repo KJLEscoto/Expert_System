@@ -21,15 +21,12 @@
         include "../controller/diagnosed-count.php"; 
   ?>
 
-  <h3 class="text-2xl font-bold mt-10 text-center bg-[#3B3131] text-white rounded-lg p-3 mb-5">List of Results</h3>
-  <table class="w-full border-2 border-black">
-    <tr class="border-2 border-black">
-      <?php
-        include "../controller/chart.php";
-        ?>
-    </tr>
+  <h3 class="text-2xl font-bold mt-20 text-center bg-[#3B3131] text-white rounded-lg p-3 mb-5">List of Results:
+    <?php require "../controller/totalResults.php"; ?></h3>
 
-  </table>
+  <?php
+      include "../controller/chart.php";
+    ?>
 </body>
 
 </html>

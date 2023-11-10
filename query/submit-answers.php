@@ -71,8 +71,8 @@ if (isset($_POST['Yes'])) {
     header("Location: ../php_tabs/current-result.php");
     exit();
 } else if (isset($_POST['No'])) {
-    header("Location: question-loop.php");
+    include ("../php_tabs/question-list.php");
+    header("Location: question-loop.php?question=". count($questions));
     exit();
 }
-
 ?>

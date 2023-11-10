@@ -5,8 +5,7 @@
   style="display: block;">
   <h2 class="text-2xl font-semibold text-gray-800 mb-4">Confirmation</h2>
   <hr class="w-full m-auto border mb-3">
-  <hr class="w-full m-auto border mb-3 mt-3">
-  <label class="text-lg font-medium tracking-wide">
+  <label class="text-base font-medium tracking-wide">
     <?php 
         if(isset($_POST['result_id'])) {
             echo "Are you sure you want to delete this result?";
@@ -14,8 +13,9 @@
             echo "Are you sure you want to delete this user?";
         }
     ?>
-</label>
-  <br>
+  </label>
+
+  <hr class="w-full m-auto border mb-3 mt-3">
   <div class="flex justify-center items-center">
     <form action="<?php 
         if(isset($_POST['result_id'])) {

@@ -34,17 +34,8 @@
           <h4 class="text-[#e7e7e7] mb-2">Total Users</h4>
           <h5 class="font-bold text-[#e7e7e7]">
             <?php
-                        $sql = "SELECT COUNT(*) as user_count from users where type='guest' and deleted_at is null";
-                        $result = $conn->query($sql);
-                        $count = 0;
-
-                        if ($result->num_rows > 0) {
-                            $row = $result->fetch_assoc();
-                            $count = $row['user_count'];
-                        }
-
-                        echo $count;
-                        ?>
+                require "../controller/totalUsers.php";
+            ?>
           </h5>
         </div>
       </div>
@@ -54,18 +45,8 @@
           <h4 class="text-[#e7e7e7] mb-2">Total Results</h4>
           <h5 class="font-bold text-[#e7e7e7]">
             <?php
-                       
-                       $sql="SELECT * from result";
-                       $result=$conn-> query($sql);
-                       $count=0;
-                       if ($result-> num_rows > 0){
-                           while ($row=$result-> fetch_assoc()) {
-                   
-                               $count=$count+1;
-                           }
-                       }
-                       echo $count;
-                       ?>
+              require "../controller/totalResults.php";
+            ?>
           </h5>
         </div>
       </div>
@@ -75,22 +56,14 @@
           <h4 class="text-[#e7e7e7] mb-2">Total Admins</h4>
           <h5 class="font-bold text-[#e7e7e7]">
             <?php
-                       
-                       $sql="SELECT * from users where type='admin'";
-                       $result=$conn-> query($sql);
-                       $count=0;
-                       if ($result-> num_rows > 0){
-                           while ($row=$result-> fetch_assoc()) {
-                   
-                               $count=$count+1;
-                           }
-                       }
-                       echo $count;
-                       ?>
+              require "../controller/totalAdmins.php";
+            ?>
           </h5>
         </div>
+        </h5>
       </div>
     </div>
+  </div>
   </div>
   <script src="../assets/js/script.js"></script>
 </body>

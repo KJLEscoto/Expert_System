@@ -107,11 +107,20 @@
         Assessment Summary
       </div>
 
+
+      <h3 class="md:text-2xl text-lg font-bold mb-3 cursor-default text-[#005BAB] text-center">Total of Selected Emojis
+      </h3>
+      <section class="mt-5 mb-5 px-2">
+        <?php
+          require('../query/fetch-choice-count.php');
+        ?>
+      </section>
+
       <div class="px-2">
         <div class="flex justify-between flex-col-reverse md:flex-row">
           <p><span>Result:</span> <span
               class="w-full bg-gray-200 font-normal px-2 rounded-sm"><?php echo $row['result'];?></span></p>
-          <p><span>Date Taken:</span> <span
+          <p class="text-center"><span>Date Taken:</span> <span
               class="w-full bg-gray-200 font-normal px-2 rounded-sm"><?php echo $row['created_at'];?></span></p>
         </div>
 

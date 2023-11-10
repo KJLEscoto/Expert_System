@@ -26,22 +26,6 @@ echo "<th class='py-2 px-4'>Action</th>";
 echo "</tr>";
 
 while ($row = $result->fetch_assoc()) {
-    // Determine diagnosis based on 'result' column
-    $diagnosis = '';
-    $resultValue = $row['result'];
-    if ($resultValue >= 1 && $resultValue <= 10) {
-        $diagnosis = 'Normal';
-    } elseif ($resultValue >= 11 && $resultValue <= 16) {
-        $diagnosis = 'Mild Mood Disturbance';
-    } elseif ($resultValue >= 17 && $resultValue <= 20) {
-        $diagnosis = 'Borderline Clinical Depression';
-    } elseif ($resultValue >= 21 && $resultValue <= 30) {
-        $diagnosis = 'Moderate Depression';
-    } elseif ($resultValue >= 31 && $resultValue <= 40) {
-        $diagnosis = 'Severe Depression';
-    } elseif ($resultValue > 40) {
-        $diagnosis = 'Extreme Depression';
-    }
 
     // Check if the current user is the same as the previous one
     if ($previousUserId !== $row['user_id']) {

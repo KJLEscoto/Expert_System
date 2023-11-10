@@ -17,7 +17,9 @@ include "../controller/adminIncharge.php";
     href="../viewAdmin/adminDashboard.php"><button>
       < Back</button></a>
 
-  <h3 class="text-2xl font-bold mt-2 text-center bg-[#3B3131] text-white rounded-lg p-3 mb-5">List of Admins</h3>
+  <h3 class="text-2xl font-bold mt-2 text-center bg-[#3B3131] text-white rounded-lg p-3 mb-5">List of Admins:
+    <?php require "../controller/totalAdmins.php"; ?>
+  </h3>
 
   <p>
     <?php

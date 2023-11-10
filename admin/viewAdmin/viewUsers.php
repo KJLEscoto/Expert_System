@@ -22,7 +22,8 @@
     href="../viewAdmin/adminDashboard.php"><button>
       < Back</button></a>
 
-  <h3 class="text-2xl font-bold mt-2 text-center bg-[#3B3131] text-white rounded-lg p-3">List of Users</h3>
+  <h3 class="text-2xl font-bold mt-2 text-center bg-[#3B3131] text-white rounded-lg p-3">List of Users:
+    <?php require "../controller/totalUsers.php"; ?> </h3>
 
   <div class="mt-5 flex items-center">
     <label for="search" class="mr-2">Search by User ID or Name:</label>

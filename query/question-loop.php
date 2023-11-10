@@ -22,14 +22,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
     if (isset($_POST['submit'])) {
-        foreach ($_SESSION['answers'] as $index => $value) {
-            if (!isset($_SESSION['answers'][$index]) || $_SESSION['answers'][$index] < 0 || $_SESSION['answers'][$index] > 3) {
+        include("../php_tabs/question-list.php");
+
+        $answers = $_SESSION['answers'];
+        $answersCount = count($questions);
+    
+        for ($i = 0; $i < $answersCount; $i++) {
+            if (!isset($_SESSION['answers'][$i]) || $_SESSION['answers'][$i] < 0 || $_SESSION['answers'][$i] > 3) {
                 $_SESSION['error'] = "Check carefully, all questions must be answered!";
-                header("Location: question-loop.php");
+                header("Location: question-loop.php?question=". $answersCount);
                 exit();
             }
         }
-        header("Location: ../php_tabs/questions.php?submit=true");
+        header("Location: ../php_tabs/questions.php?submit=" . $answersCount);
         exit();
     }
     
