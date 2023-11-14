@@ -45,41 +45,50 @@
   </p>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-7 lg:gap-2 lg:grid-cols-4 mt-14">
-    <div class="relative overflow-hidden cursor-pointer group">
-      <img src="img/depression.jpg" alt="health" class="rounded-full object-cover h-72 w-72 mx-auto">
-      <div
-        class="absolute w-3/4 left-1/2 transform -translate-x-1/2 text-center bg-primary-color-dark bg-opacity-80 backdrop-filter backdrop-blur-lg border border-primary-color rounded-lg text-extra-light group-hover:-bottom-6 transition-all duration-300 ease-out text-white group-hover:-translate-y-[135px]">
-        <p class="text-sm my-1">Raise Awareness</p>
-        <p class="font-semibold text-base mb-2">Depression</p>
+    <a href="https://www.who.int/thailand/activities/creating-awareness-on-prevention-and-control-of-depression"
+      target="_blank">
+      <div class="relative overflow-hidden cursor-pointer group">
+        <img src="img/depression.jpg" alt="health" class="rounded-full object-cover h-72 w-72 mx-auto">
+        <div
+          class="absolute w-3/4 left-1/2 transform -translate-x-1/2 text-center bg-primary-color-dark bg-opacity-80 backdrop-filter backdrop-blur-lg border border-primary-color rounded-lg text-extra-light group-hover:-bottom-6 transition-all duration-300 ease-out text-white group-hover:-translate-y-[135px]">
+          <p class="text-sm my-1">Raise Awareness</p>
+          <p class="font-semibold text-base mb-2">Depression</p>
+        </div>
       </div>
-    </div>
+    </a>
 
-    <div class="relative overflow-hidden cursor-pointer group">
-      <img src="img/adhd.jpg" alt="health" class="rounded-full object-cover h-72 w-72 mx-auto">
-      <div
-        class="absolute w-3/4 left-1/2 transform -translate-x-1/2 text-center bg-primary-color-dark bg-opacity-80 backdrop-filter backdrop-blur-lg border border-primary-color rounded-lg text-extra-light group-hover:-bottom-6 transition-all duration-300 ease-out text-white group-hover:-translate-y-[135px]">
-        <p class="text-sm my-1">Raise Awareness</p>
-        <p class="font-semibold text-base mb-2">ADHD</p>
+    <a href="https://www.cdc.gov/ncbddd/adhd/features/adhd-awareness.html" target="_blank">
+      <div class="relative overflow-hidden cursor-pointer group">
+        <img src="img/adhd.jpg" alt="health" class="rounded-full object-cover h-72 w-72 mx-auto">
+        <div
+          class="absolute w-3/4 left-1/2 transform -translate-x-1/2 text-center bg-primary-color-dark bg-opacity-80 backdrop-filter backdrop-blur-lg border border-primary-color rounded-lg text-extra-light group-hover:-bottom-6 transition-all duration-300 ease-out text-white group-hover:-translate-y-[135px]">
+          <p class="text-sm my-1">Raise Awareness</p>
+          <p class="font-semibold text-base mb-2">ADHD</p>
+        </div>
       </div>
-    </div>
+    </a>
 
-    <div class="relative overflow-hidden cursor-pointer group">
-      <img src="img/anxiety.jpg" alt="health" class="rounded-full object-cover h-72 w-72 mx-auto">
-      <div
-        class="absolute w-3/4 left-1/2 transform -translate-x-1/2 text-center bg-primary-color-dark bg-opacity-80 backdrop-filter backdrop-blur-lg border border-primary-color rounded-lg text-extra-light group-hover:-bottom-6 transition-all duration-300 ease-out text-white group-hover:-translate-y-[135px]">
-        <p class="text-sm my-1">Raise Awareness</p>
-        <p class="font-semibold text-base mb-2">Anxiety</p>
+    <a href="https://my.clevelandclinic.org/health/diseases/9536-anxiety-disorders" target="_blank">
+      <div class="relative overflow-hidden cursor-pointer group">
+        <img src="img/anxiety.jpg" alt="health" class="rounded-full object-cover h-72 w-72 mx-auto">
+        <div
+          class="absolute w-3/4 left-1/2 transform -translate-x-1/2 text-center bg-primary-color-dark bg-opacity-80 backdrop-filter backdrop-blur-lg border border-primary-color rounded-lg text-extra-light group-hover:-bottom-6 transition-all duration-300 ease-out text-white group-hover:-translate-y-[135px]">
+          <p class="text-sm my-1">Raise Awareness</p>
+          <p class="font-semibold text-base mb-2">Anxiety</p>
+        </div>
       </div>
-    </div>
+    </a>
 
-    <div class="relative overflow-hidden cursor-pointer group">
-      <img src="img/bipolar.jpg" alt="health" class="rounded-full object-cover h-72 w-72 mx-auto">
-      <div
-        class="absolute w-3/4 left-1/2 transform -translate-x-1/2 text-center bg-primary-color-dark bg-opacity-80 backdrop-filter backdrop-blur-lg border border-primary-color rounded-lg text-extra-light group-hover:-bottom-6 transition-all duration-300 ease-out text-white group-hover:-translate-y-[135px]">
-        <p class="text-sm my-1">Raise Awareness</p>
-        <p class="font-semibold text-base mb-2">Bipolar Disorder</p>
+    <a href="https://meridianpsychiatricpartners.com/the-importance-of-raising-awareness-about-bipolar-disorder/"
+      target="_blank">
+      <div class="relative overflow-hidden cursor-pointer group">
+        <img src="img/bipolar.jpg" alt="health" class="rounded-full object-cover h-72 w-72 mx-auto">
+        <div
+          class="absolute w-3/4 left-1/2 transform -translate-x-1/2 text-center bg-primary-color-dark bg-opacity-80 backdrop-filter backdrop-blur-lg border border-primary-color rounded-lg text-extra-light group-hover:-bottom-6 transition-all duration-300 ease-out text-white group-hover:-translate-y-[135px]">
+          <p class="text-sm my-1">Raise Awareness</p>
+          <p class="font-semibold text-base mb-2">Bipolar Disorder</p>
+        </div>
       </div>
-
-    </div>
+    </a>
   </div>
 </section>

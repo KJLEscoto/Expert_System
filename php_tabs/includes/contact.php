@@ -45,12 +45,8 @@
       up
       for
       newsletter!</h1>
-    <p class="text-[#004e94] text-base text-justify lg:text-start dark:text-gray-100">Lorem Ipsum Dolor A Sit Ameti,
-      Consectetur
-      Adipisicing Elit, Sed Do Eiusmod
-      Tempor
-      Incididunt Sed Do Incididunt
-      Sed.</p>
+    <p class="text-[#004e94] text-base text-justify lg:text-start dark:text-gray-100">Get notified for future updates.
+      Our privacy policy ensures that your information is secure and will not be shared with third parties.</p>
   </div>
   <form action="query/newsletter-email.php" method="POST" class="flex lg:px-5 px-0">
     <input type="email"

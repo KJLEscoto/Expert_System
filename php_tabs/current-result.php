@@ -65,8 +65,7 @@
       <section class="md:flex block justify-between mb-20 items-center">
         <div class="flex items-center justify-center">
           <img class="w-auto md:h-14 h-8 mr-2" src="../img/sti.png" alt="">
-          <h1 class="md:text-2xl text-center text-lg font-bold text-[#005BAB] cursor-default">
-            <?php echo "College - Davao"; ?>
+          <h1 class="md:text-2xl text-center text-lg font-bold text-[#005BAB] cursor-default">College - Davao
           </h1>
         </div>
         <hr class="border mb-2 mt-2 md:hidden block">
@@ -110,17 +109,17 @@
 
       <h3 class="md:text-2xl text-lg font-bold mb-3 cursor-default text-[#005BAB] text-center">Total of Selected Emojis
       </h3>
-      <section class="mt-5 mb-5 px-2">
+      <section class="mb-5 px-2">
         <?php
-          require('../query/fetch-choice-count.php');
+          require('../query/emoji-current-result.php');
         ?>
       </section>
 
       <div class="px-2">
         <div class="flex justify-between flex-col-reverse md:flex-row">
-          <p><span>Result:</span> <span
+          <p><span>Overall Score:</span> <span
               class="w-full bg-gray-200 font-normal px-2 rounded-sm"><?php echo $row['result'];?></span></p>
-          <p class="text-center"><span>Date Taken:</span> <span
+          <p><span>Date Taken:</span> <span
               class="w-full bg-gray-200 font-normal px-2 rounded-sm"><?php echo $row['created_at'];?></span></p>
         </div>
 

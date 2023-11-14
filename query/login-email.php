@@ -2,14 +2,11 @@
 session_start();
 require $_SERVER["DOCUMENT_ROOT"] . '/expert_system/config/database.php';
 
-if (isset($_SESSION['first']) || isset($_SESSION['last']) || isset($_SESSION['age']) || isset($_SESSION['pass-pin'])  || isset($_SESSION['security']) || isset($_SESSION['secret'])){
-  unset($_SESSION['first']);
-  unset($_SESSION['last']);
-  unset($_SESSION['age']);
-  unset($_SESSION['pass-pin']);
-  unset($_SESSION['security']);
-  unset($_SESSION['secret']);
-} 
+// Unset session variables if set
+$unsetSessionVariables = ['first', 'last', 'age', 'pass-pin', 'security', 'secret'];
+foreach ($unsetSessionVariables as $variable) {
+    unset($_SESSION[$variable]);
+}
 
 if (isset($_POST['email'])) {
     function validate($data) {
@@ -23,8 +20,8 @@ if (isset($_POST['email'])) {
     $email = validate($_POST['email']);
 
     if (empty($email)) {
-      $error_message = "Email is required";
-      header("Location: ../index.php?error=" . urlencode($error_message));
+        $error_message = "Email is required";
+        header("Location: ../index.php?error=" . urlencode($error_message));
     } else {
         $_SESSION['email'] = $email;
         $sql = "SELECT * FROM users WHERE email='$email'";

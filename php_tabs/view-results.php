@@ -60,7 +60,7 @@
       require ('../query/fetch-user.php');
     ?>
 
-    <section class="print-page flex items-center justify-center" id="invoice">
+    <section class="print-page md:text-base text-xs flex items-center justify-center" id="invoice">
 
       <div class="max-w-6xl h-auto bg-gray-100 m-10 p-20 overflow-y-auto shadow-lg">
 
@@ -105,12 +105,12 @@
           if (isset($_GET['result_id'])) {
               $result_id = $_GET['result_id'];
 
-              echo "<h3 class='md:text-2xl text-lg font-bold mb-3 cursor-default text-[#005BAB] text-center'>Total of Selected Emojis </h3>";
+              echo "<h3 class='md:text-2xl text-lg font-bold mb-3 cursor-default text-[#005BAB] text-center'>Total of Selected Emojis</h3>";
               // Display the result based on the result_id
               if (array_key_exists($result_id - 1, $resultsArray)) {
                   $result = $resultsArray[$result_id - 1];
                   echo "<section class='mt-5 mb-5 px-2'>";
-                    include('../query/fetch-choice-countCopy.php');
+                    include('../query/emoji-view-results.php');
                   echo"</section>";
                   echo "<div class='px-2'>";
                   echo "<div class='flex justify-between flex-col-reverse md:flex-row'>";
