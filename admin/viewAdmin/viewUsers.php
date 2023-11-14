@@ -26,12 +26,14 @@
     <?php require "../controller/totalUsers.php"; ?> </h3>
 
   <div class="mt-5 flex items-center">
-    <label for="search" class="mr-2">Search by User ID or Name:</label>
+    <label for="search" class="mr-2">Search:</label>
     <input type="text" id="search" name="user_id"
       class="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500"
       placeholder="User ID or Name">
     <button class="bg-[#9b9595] hover:bg-[#7c7474] text-white py-2 px-4 rounded-md ml-2"
       onclick="searchFunction()">Search</button>
+    <button class="bg-[#9b9595] hover:bg-[#7c7474] text-white py-2 px-4 rounded-md ml-2"
+      onclick="clearSearch()">Clear</button>
   </div>
 
   <div class="flex justify-center mt-5">
@@ -78,8 +80,23 @@
   </div>
 
   <script>
+  function clearSearch() {
+    var input, table, tr, i;
+
+    // Clear the search box
+    input = document.getElementById("search");
+    input.value = "";
+
+    // Display the entire table
+    table = document.getElementById("userTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+      tr[i].style.display = "";
+    }
+  }
+
   function searchFunction() {
-    var input, filter, table, tr, td, i, txtValue;
+    var input, filter, table, tr, td, i, j, txtValue;
     input = document.getElementById("search");
     filter = input.value.toUpperCase();
     table = document.getElementById("userTable");
@@ -87,7 +104,7 @@
 
     for (i = 0; i < tr.length; i++) {
       var found = false;
-      for (var j = 0; j < 2; j++) { // Search in the first two columns: User ID and Name
+      for (j = 0; j < tr[i].cells.length; j++) {
         td = tr[i].getElementsByTagName("td")[j];
         if (td) {
           txtValue = td.textContent || td.innerText;
@@ -105,6 +122,7 @@
     }
   }
   </script>
+
 
 </body>
 

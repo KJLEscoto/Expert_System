@@ -28,11 +28,13 @@ include "../controller/adminIncharge.php";
     }
     ?>
   <div class="mb-5">
-    <label for="search">Search by Admin ID or Name: </label>
+    <label for="search">Search: </label>
     <input type="text" class="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500"
-      id="search" name="user_id" placeholder="Enter User ID or Name">
+      id="search" name="user_id" placeholder="ID or Name">
     <input type="button" class="bg-[#9b9595] hover:bg-[#7c7474] text-white py-2 px-4 rounded-md ml-2" value="Search"
       onclick="searchFunction()">
+    <input type="button" class="bg-[#9b9595] hover:bg-[#7c7474] text-white py-2 px-4 rounded-md ml-2" value="Clear"
+      onclick="clearSearch()">
   </div>
   </p>
   </div>
@@ -45,42 +47,74 @@ include "../controller/adminIncharge.php";
       <th class="py-2 px-4">Action</th>
 
     </thead>
-    <tbody>
+    <tbody id="adminTableBody">
       <?php
         include "../controller/admins.php";
         ?>
 
     </tbody>
   </table>
-</body>
-<script>
-function searchFunction() {
-  var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById("search");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("adminTableBody");
-  tr = table.getElementsByTagName("tr");
 
-  for (i = 0; i < tr.length; i++) {
-    var td1 = tr[i].getElementsByTagName("td")[0];
-    var td2 = tr[i].getElementsByTagName("td")[1];
-    if (td1 || td2) {
-      var txtValue1 = td1.textContent || td1.innerText;
-      var txtValue2 = td2.textContent || td2.innerText;
-      if (txtValue1.toUpperCase().indexOf(filter) > -1 || txtValue2.toUpperCase().indexOf(filter) > -1) {
+
+
+  <script>
+  function clearSearch() {
+    var input, table, tr, i;
+
+    // Clear the search input
+    input = document.getElementById("search");
+    input.value = "";
+
+    // Display the entire table
+    table = document.getElementById("adminTableBody");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+      tr[i].style.display = "";
+    }
+  }
+
+  function searchFunction() {
+    var input, filter, table, tr, td, i, j, txtValue;
+    input = document.getElementById("search");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("adminTableBody");
+    tr = table.getElementsByTagName("tr");
+
+    if (filter.trim() === "") {
+      // If the search box is empty, display the entire table
+      for (i = 0; i < tr.length; i++) {
+        tr[i].style.display = "";
+      }
+      return;
+    }
+
+    for (i = 0; i < tr.length; i++) {
+      var found = false;
+      for (j = 0; j < tr[i].cells.length; j++) {
+        td = tr[i].getElementsByTagName("td")[j];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            found = true;
+            break;
+          }
+        }
+      }
+      if (found || tr[i].getElementsByTagName("th").length > 0) {
         tr[i].style.display = "";
       } else {
         tr[i].style.display = "none";
       }
     }
   }
-}
 
-function confirmDelete(user_id) {
-  if (confirm("Are you sure you want to delete this admin?")) {
-    window.location = "../controller/deleteAdmin.php?user_id=" + user_id;
+  function confirmDelete(user_id) {
+    if (confirm("Are you sure you want to delete this admin?")) {
+      window.location = "../controller/deleteAdmin.php?user_id=" + user_id;
+    }
   }
-}
-</script>
+  </script>
+
+</body>
 
 </html>

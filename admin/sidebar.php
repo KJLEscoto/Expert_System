@@ -6,7 +6,7 @@
     <img class="m-auto" src="../assets/images/logo.png" width="120" height="120" alt="Swiss Collection">
   </div>
 
-  <h5 class="text-center mt-3 text-[#e7e7e7] mb-3">Hello, Admin</h5>
+  <h5 class="text-center mt-3 text-[#e7e7e7] mb-3">Hello, <?php echo ucfirst($admin_first_name); ?>!</h5>
 
   <hr class="border-2 border-gray-200 w-3/4 mb-3 m-auto">
 
@@ -24,13 +24,13 @@
   </a>
   <a href="../viewAdmin/viewAdmin.php" onclick="showAdmins()">
     <div class="flex text-base items-center m-auto">
-      <i class="fa fa-th mr-2"></i>
+      <i class="fa fa-list mr-2"></i>
       <p>Admin</p>
     </div>
   </a>
   <a href="../viewAdmin/viewResults.php" onclick="showResults()">
     <div class="flex text-base items-center m-auto">
-      <i class="fa fa-list mr-2"></i>
+      <i class="fa fa-th mr-2"></i>
       <p>Results</p>
     </div>
   </a>

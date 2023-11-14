@@ -45,7 +45,7 @@ while ($row = $result->fetch_assoc()) {
     }
 
     echo "<td class='py-2 px-4 border-r-2 text-center border-b'>" . $row['result'] . "</td>";
-    echo "<td class='py-2 px-4 border-r-2 border-b'>" . $diagnosis . "</td>";
+    echo "<td class='py-2 px-4 border-r-2 border-b'>" . getDiagnosis($row['result']) . "</td>";
     echo "<td class='py-2 px-4 border-r-2 text-center border-b'>" . $row['created_at'] . "</td>";
     echo '<td class="py-2 px-4 border-r-2 text-center border-b"><form method="post" action="">
     <input type="hidden" name="result_id" value="' . $row['result_id'] . '">
@@ -66,4 +66,27 @@ function getNumRows($user_id, $connection) {
     $row = $result->fetch_assoc();
     return $row['num_rows'];
 }
+
+
+function getDiagnosis($result) {
+    if($result >= -1 AND $result <= 10) {
+        return 'Normal';
+    }
+    else if($result >= 11 AND $result <= 16) {
+        return 'Mild Mood Disturbance';
+    }
+    else if($result >= 17 AND $result <= 20) {
+        return 'Borderline Clinical Depression';
+    }
+    else if($result >= 21 AND $result <= 30) {
+        return 'Moderate Depression';
+    }
+    else if($result >= 31 AND $result <= 40) {
+        return 'Severe Depression';
+    }
+    else if($result > 40) {
+        return 'Extreme Depression';
+    }
+}
+
 ?>

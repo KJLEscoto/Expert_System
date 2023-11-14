@@ -41,17 +41,6 @@
       </div>
       <div class="col-sm-3 mx-auto">
         <div class="card">
-          <i class="fa fa-th mb-2" style="font-size: 70px;"></i>
-          <h4 class="text-[#e7e7e7] mb-2">Total Results</h4>
-          <h5 class="font-bold text-[#e7e7e7]">
-            <?php
-              require "../controller/totalResults.php";
-            ?>
-          </h5>
-        </div>
-      </div>
-      <div class="col-sm-3 mx-auto">
-        <div class="card">
           <i class="fa fa-list mb-2" style="font-size: 70px;"></i>
           <h4 class="text-[#e7e7e7] mb-2">Total Admins</h4>
           <h5 class="font-bold text-[#e7e7e7]">
@@ -61,6 +50,17 @@
           </h5>
         </div>
         </h5>
+      </div>
+      <div class="col-sm-3 mx-auto">
+        <div class="card">
+          <i class="fa fa-th mb-2" style="font-size: 70px;"></i>
+          <h4 class="text-[#e7e7e7] mb-2">Total Results</h4>
+          <h5 class="font-bold text-[#e7e7e7]">
+            <?php
+              require "../controller/totalResults.php";
+            ?>
+          </h5>
+        </div>
       </div>
     </div>
   </div>

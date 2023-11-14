@@ -22,7 +22,8 @@
   ?>
 
   <h3 class="text-2xl font-bold mt-20 text-center bg-[#3B3131] text-white rounded-lg p-3 mb-5">List of Results:
-    <?php require "../controller/totalResults.php"; ?></h3>
+    <?php require "../controller/totalResults.php"; ?>
+  </h3>
 
   <?php
       include "../controller/chart.php";

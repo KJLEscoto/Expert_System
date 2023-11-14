@@ -4,7 +4,7 @@ session_start();
 require $_SERVER["DOCUMENT_ROOT"] . '/expert_system/config/database.php';
 
 $sql = "SELECT 
-            SUM(CASE WHEN r.result >= 1 AND r.result <= 10 THEN 1 ELSE 0 END) AS Normal,
+            SUM(CASE WHEN r.result >= -1 AND r.result <= 10 THEN 1 ELSE 0 END) AS Normal,
             SUM(CASE WHEN r.result >= 11 AND r.result <= 16 THEN 1 ELSE 0 END) AS 'Mild Mood Disturbance',
             SUM(CASE WHEN r.result >= 17 AND r.result <= 20 THEN 1 ELSE 0 END) AS 'Borderline Clinical Depression',
             SUM(CASE WHEN r.result >= 21 AND r.result <= 30 THEN 1 ELSE 0 END) AS 'Moderate Depression',
