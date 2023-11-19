@@ -18,14 +18,14 @@
   </a>
   <a href="../viewAdmin/viewUsers.php" onclick="showUsers()">
     <div class="flex text-base items-center m-auto">
-      <i class="fa fa-users mr-2"></i>
+      <i class="fa fa-users mr-2 -ml-1"></i>
       <p>Users</p>
     </div>
   </a>
   <a href="../viewAdmin/viewAdmin.php" onclick="showAdmins()">
     <div class="flex text-base items-center m-auto">
       <i class="fa fa-list mr-2"></i>
-      <p>Admin</p>
+      <p>Admins</p>
     </div>
   </a>
   <a href="../viewAdmin/viewResults.php" onclick="showResults()">

@@ -5,11 +5,11 @@
   style="display: block;">
   <h2 class="text-2xl font-semibold text-gray-800 mb-4">Details</h2>
   <hr class="w-full m-auto border">
-  <br>
 
   <?php
-  
-    echo "<p class='mb-2'>Emojis Equivalent to Points:</p>";
+    echo "<p class='mb-2 text-sm md:text-base font-medium mt-2'>Answering all questions is required before exiting this page. <br> Leaving without completing the questions will result in non-submission.</p>";
+    echo "<hr class='w-full m-auto border'>";
+    echo "<p class='mb-2 text-sm md:text-base mt-2'>Emojis Equivalent to Points:</p>";
     $emojis = ["😕", "🙁", "😞", "😭"];
     $count = 0;
     while($count <= count($emojis)-1) {

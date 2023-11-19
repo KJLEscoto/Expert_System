@@ -24,9 +24,10 @@ include "../controller/adminIncharge.php";
   <p>
     <?php
     if (isset($_GET['save-success'])) {
-        echo "Successfully saved";
+        echo "<div class='notification success'>Deleted Successfully!</div>";
     }
     ?>
+    <script src="../../js/notify-script.js"></script>
   <div class="mb-5">
     <label for="search">Search: </label>
     <input type="text" class="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500"
@@ -48,12 +49,18 @@ include "../controller/adminIncharge.php";
 
     </thead>
     <tbody id="adminTableBody">
-      <?php
+      <form action="" method="POST">
+        <?php
         include "../controller/admins.php";
         ?>
+      </form>
 
     </tbody>
   </table>
+
+  <?php if(isset($_POST['deleteAdmin'])) {
+    include("../confirm-modal.php");
+  } ?>
 
 
 
@@ -105,12 +112,6 @@ include "../controller/adminIncharge.php";
       } else {
         tr[i].style.display = "none";
       }
-    }
-  }
-
-  function confirmDelete(user_id) {
-    if (confirm("Are you sure you want to delete this admin?")) {
-      window.location = "../controller/deleteAdmin.php?user_id=" + user_id;
     }
   }
   </script>

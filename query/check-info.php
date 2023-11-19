@@ -23,11 +23,11 @@ if (isset($_POST['pass'])) {
         redirectToError("pin", $error_pin[1]);
     } else {
         // Validate and clean user input
-        validateAndCleanInput($_SESSION['first'], "first", array("First Name is required", "First Name should only contain letters and dots"));
-        validateAndCleanInput($_SESSION['last'], "last", array("Last Name is required", "Last Name should only contain letters and dots"));
+        validateAndCleanInput($_SESSION['first'], "first", array("First Name is required", "First Name should only contain letters and spaces"));
+        validateAndCleanInput($_SESSION['last'], "last", array("Last Name is required", "Last Name should only contain letters and spaces"));
         validateAge($_SESSION['age'], array("Age is required", "Age should be a whole number", "Age cannot be below 0", "Age cannot exceed more than 120"));
         validateSecurity($_SESSION['security'], "---", array("Security Question is required"));
-        validateAndCleanInput($_SESSION['secret'], "secret", array("Secret answer is required"));
+        validateSecurityAnswer($_SESSION['secret'], "secret", array("Secret answer is required"));
 
         // If all validations pass, store data in session and proceed
         $_SESSION['new-acc'] = true; // Storing the pin in session
@@ -55,9 +55,17 @@ function validateAndCleanInput(&$input, $param, $errorMessages)
 {
     if (empty($input)) {
         redirectToError($param, $errorMessages[0]);
-    } elseif (!preg_match('/^[A-Za-z.]+$/', $input)) {
+    } elseif (!preg_match('/^[A-Za-z\s.]+$/', $input)) {
         unset($_SESSION[$param]);
         redirectToError($param, $errorMessages[1]);
+    }
+}
+
+function validateSecurityAnswer(&$input, $param, $errorMessages) {
+    if (empty($input)) {
+        redirectToError($param, $errorMessages[0]);
+    } elseif (!preg_match('/^[A-Za-z0-9\s.]+$/', $input)) {
+        unset($_SESSION[$param]);
     }
 }
 

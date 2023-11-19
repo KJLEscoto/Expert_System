@@ -3,8 +3,13 @@
 require $_SERVER["DOCUMENT_ROOT"] . '/expert_system/config/database.php';
 
 // Check if admin_id is set in the URL
-if (isset($_GET["user_id"])) {
-    $admin_id = $_GET["user_id"];
+if (isset($_GET["user_id"]) || isset($_POST["Yes"])) {
+    if (isset($_GET["user_id"]) ) {
+        $admin_id = $_GET["user_id"]; 
+    } else {
+        $admin_id = $_POST["Yes"];
+    }
+
 
     // Prepare and bind a DELETE statement
     $stmt = $conn->prepare("DELETE FROM users WHERE user_id = ?");
@@ -22,5 +27,6 @@ if (isset($_GET["user_id"])) {
     }
 } else {
     // Handle the case where admin_id is not set in the URL
+    header("Location: ../viewAdmin/viewAdmin.php");
     echo "Invalid admin_id parameter";
 }

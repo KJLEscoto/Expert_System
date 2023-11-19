@@ -20,9 +20,16 @@
     include "../sidebar.php";
    
     include_once "../../config/database.php";
-
+    if (isset($_POST['cancel-new-user'])) {
+      unset($_SESSION['first']);
+      unset($_SESSION['last']);
+      unset($_SESSION['age']);
+      unset($_SESSION['pass-pin']);
+      unset($_SESSION['security']);
+      unset($_SESSION['secret']);
+    }
     if (isset($_GET['acc-created'])) {
-        include("../../php_tabs/includes/admin-email-modal.php");
+        include("../admin-email-modal.php");
     }
     ?>
 

@@ -21,7 +21,7 @@ echo "<tr class='bg-gray-200 border-b-2'>";
 echo "<th class='py-2 px-4 border-r-2'>User</th>";
 echo "<th class='py-2 px-4 border-r-2'>Result</th>";
 echo "<th class='py-2 px-4 border-r-2'>Diagnosis</th>";
-echo "<th class='py-2 px-4 border-r-2'>Date Taken</th>";
+echo "<th class='py-2 px-4 border-r-2'>Date and Time Taken</th>";
 echo "<th class='py-2 px-4'>Action</th>";
 echo "</tr>";
 

@@ -124,7 +124,7 @@
                   echo "<p><span>Recommendation:</span> " . $reco . "</p>" ;
                   echo "</div>";
               } else {
-                  echo "error 2";
+                echo "<p class='text-red-500 px-2'>Invalid result_id. Please provide a valid result_id.</p>";
               }
           } else {
               // Redirect the user to the first result if no result_id is provided in the URL
@@ -133,7 +133,7 @@
                   header("Location: view-results.php?result_id=$firstResultId");
                   exit;
               } else {
-                  echo "error 1";
+                  echo "<p class='text-red-500 px-2'><span class='mr-1'>No result were found!</span>It appears that all of your results have been deleted by the Admin. Please return Home and Take Another Response.</p>";
               }
           }
         ?>

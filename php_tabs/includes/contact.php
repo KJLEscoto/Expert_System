@@ -16,9 +16,6 @@
       <input
         class="w-full bg-white focus:bg-white py-2 px-3 rounded-md border-2 border-gray-300 transition-all duration-500 outline-none focus:border-[#003568] focus:text-[#004e94] mb-3 m-auto"
         type="email" name="contact_email" placeholder="Enter your email" required>
-      <input
-        class="w-full bg-white focus:bg-white py-2 px-3 rounded-md border-2 border-gray-300 transition-all duration-500 outline-none focus:border-[#003568] focus:text-[#004e94] mb-3 m-auto"
-        type="text" name="contact_number" placeholder="Enter your number">
       <textarea
         class="w-full bg-white focus:bg-white py-2 px-3 rounded-md border-2 border-gray-300 resize-y transition-all duration-500 outline-none focus:border-[#003568] focus:text-[#004e94] mb-3 m-auto"
         name="message" cols="30" rows="10" style="resize: vertical;" placeholder="Enter your message"
