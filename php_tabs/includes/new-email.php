@@ -4,14 +4,16 @@
   class="modal fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#d0d9e7] p-6 shadow-lg rounded-lg z-20"
   style="display: block; max-height: 80%; overflow-y: scroll;">
   <div class="flex justify-between">
-  <h2 class="text-2xl font-semibold text-gray-800 mb-4"><?php echo isset($_SESSION['admin']) ? "New admin" : "New User"; ?></h2>
+    <h2 class="text-2xl font-semibold text-gray-800 mb-4">
+      <?php echo isset($_SESSION['admin']) ? "New admin" : "New User"; ?></h2>
     <form action="<?php echo isset($_SESSION['admin']) ? "adminDashboard.php" : "index.php"; ?>" method="post">
       <button type="submit" name="cancel-new-user"
         class="cursor-pointer absolute top-5 right-5 text-md text-gray-500 p-2 rounded-lg hover:bg-gray-100 hover:">Cancel</button>
     </form>
   </div>
   <hr class="w-full m-auto border mb-3">
-  <form action="<?php echo isset($_SESSION['admin']) ? "../../query/check-info.php" : "query/check-info.php"; ?>" method="POST" class="sm:w-[200px] md:w-[300px] lg:w-[500px] mx-auto duration-300">
+  <form action="<?php echo isset($_SESSION['admin']) ? "../../query/check-info.php" : "query/check-info.php"; ?>"
+    method="POST" class="sm:w-[200px] md:w-[300px] lg:w-[500px] mx-auto duration-300">
     <div class="lg:flex block duration-300">
       <label class="mr-2">First Name:</label><br>
       <?php if (isset($_GET['error-first'])) { ?>

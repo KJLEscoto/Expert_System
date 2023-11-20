@@ -28,6 +28,9 @@
       unset($_SESSION['security']);
       unset($_SESSION['secret']);
     }
+    if (isset($_POST['logout'])) {
+      include("../confirm-modal.php");
+    }
     if (isset($_GET['acc-created'])) {
         include("../admin-email-modal.php");
     }

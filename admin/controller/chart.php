@@ -18,7 +18,7 @@ if (isset($_POST['result_id'])) {
 
 echo "<table class='w-full bg-white border border-gray-300 rounded-md overflow-hidden shadow-md'>";
 echo "<tr class='bg-gray-200 border-b-2'>";
-echo "<th class='py-2 px-4 border-r-2'>User</th>";
+echo "<th class='py-2 px-4 border-r-2'>User ID - Name</th>";
 echo "<th class='py-2 px-4 border-r-2'>Result</th>";
 echo "<th class='py-2 px-4 border-r-2'>Diagnosis</th>";
 echo "<th class='py-2 px-4 border-r-2'>Date and Time Taken</th>";

@@ -20,11 +20,14 @@
       </p>
     </div>
     <div class="flex-col md:flex-row-reverse items-center flex md:px-20 px-5 md:gap-3 gap-0">
-      <a class="nav-link text-[#e7e7e7] items-center m-auto flex border bg-[#847d7c] hover:bg-[#d4d2d2] hover:text-[#5e5555] rounded-lg"
-        href="#" onclick="confirmLogout()">
-        <i class="fas fa-sign-out-alt mr-2"></i>
-        <p>Logout</p>
-      </a>
+      <form action="" method="post">
+        <button
+          class="nav-link text-[#e7e7e7] items-center m-auto flex border bg-[#847d7c] hover:bg-[#d4d2d2] hover:text-[#5e5555] rounded-lg"
+          name="logout">
+          <i class="fas fa-sign-out-alt mr-2"></i>
+          <p>Logout</p>
+        </button>
+      </form>
       <h4 class="text-center items-center m-auto"><a href="../viewAdmin/createAdmin.php"
           class="hover:no-underline text-[#e7e7e7] hover:text-[#aba6a6]">+
           Add Admin</a>
