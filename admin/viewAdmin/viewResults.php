@@ -16,6 +16,12 @@
       href="../viewAdmin/adminDashboard.php"><button>
         < Back</button></a>
   </div>
+  <?php 
+  if (isset($_GET['save-success'])) {
+    echo "<div class='notification success'>Deleted Successfully!</div>";
+  }
+  ?>
+  <script src="../../js/notify-script.js"></script>
   <h3 class="text-2xl font-bold mt-2 text-center bg-[#3B3131] text-white rounded-lg p-3 mb-5">Diagnosis Count</h3>
   <?php 
         include "../controller/diagnosed-count.php"; 

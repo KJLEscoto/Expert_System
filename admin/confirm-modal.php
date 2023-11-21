@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="../dist/output.css">
 <?php
 function generateConfirmationModal($post) {
     $confirmationMessage = "";

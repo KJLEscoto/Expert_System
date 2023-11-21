@@ -16,7 +16,12 @@
     if (isset($_POST['user_id'])) {
         $_SESSION['u_id'] = $_POST['user_id'];
         include("../confirm-modal.php");
-    } ?>
+    }
+    if (isset($_GET['save-success'])) {
+        echo "<div class='notification success'>Deleted Successfully!</div>";
+    }
+    ?>
+  <script src="../../js/notify-script.js"></script>
 
   <a class="inline-block bg-[#9b9595] hover:bg-[#7c7474] text-white py-1 px-3 rounded mt-4 mb-2"
     href="../viewAdmin/adminDashboard.php"><button>
@@ -67,7 +72,7 @@
                 echo "<td class='py-2 px-4 border-r-2 text-center border-b'>" . $row['type'] . "</td>";
                 echo "<td class='py-2 px-4 border-r-2 border-b'>" . $row['created_at'] . "</td>";
                 echo '<td class="py-2 px-4 text-center border-b">
-                        <form method="post" action="">
+                        <form method="post" action="viewUsers.php?confirm">
                           <input type="hidden" name="user_id" value="' . $row['user_id'] . '">
                           <input type="submit" value="Delete" class="bg-[#a07f7e] hover:bg-[#864543] text-white py-1 px-2 rounded">
                         </form>

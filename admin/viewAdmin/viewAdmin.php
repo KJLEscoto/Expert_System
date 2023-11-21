@@ -49,7 +49,7 @@ include "../controller/adminIncharge.php";
 
     </thead>
     <tbody id="adminTableBody">
-      <form action="" method="POST">
+      <form action="viewAdmin.php?confirm" method="POST">
         <?php
         include "../controller/admins.php";
         ?>

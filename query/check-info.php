@@ -34,6 +34,12 @@ if (isset($_POST['pass'])) {
 
         if (isset($_SESSION['admin'])) {
             include("add-user.php");
+            unset($_SESSION['first']);
+            unset($_SESSION['last']);
+            unset($_SESSION['age']);
+            unset($_SESSION['pass-pin']);
+            unset($_SESSION['security']);
+            unset($_SESSION['secret']);
             header("Location: ../admin/viewAdmin/adminDashboard.php?acc-created=true");
         } else {
             header("Location: ../index.php?instruction=true");

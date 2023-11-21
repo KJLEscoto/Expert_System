@@ -16,7 +16,7 @@ if (isset($_POST['Yes'])) {
         $deleteResultsSQL = "DELETE FROM result WHERE result_id = $result_id";
         if ($conn->query($deleteResultsSQL) === true) {
             // Success: User and related results deleted
-            header("Location: ../viewAdmin/viewResults.php"); // Redirect back to the main page
+            header("Location: ../viewAdmin/viewResults.php?save-success=true"); // Redirect back to the main page
         } else {
             echo "Error deleting related results: " . $conn->error;
         }

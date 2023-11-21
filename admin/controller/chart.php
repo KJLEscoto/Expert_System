@@ -47,7 +47,7 @@ while ($row = $result->fetch_assoc()) {
     echo "<td class='py-2 px-4 border-r-2 text-center border-b'>" . $row['result'] . "</td>";
     echo "<td class='py-2 px-4 border-r-2 border-b'>" . getDiagnosis($row['result']) . "</td>";
     echo "<td class='py-2 px-4 border-r-2 text-center border-b'>" . $row['created_at'] . "</td>";
-    echo '<td class="py-2 px-4 border-r-2 text-center border-b"><form method="post" action="">
+    echo '<td class="py-2 px-4 border-r-2 text-center border-b"><form method="post" action="viewResults.php?confirm">
     <input type="hidden" name="result_id" value="' . $row['result_id'] . '">
     <input type="submit" class="bg-[#a07f7e] hover:bg-[#864543] text-white py-1 px-2 rounded" value="Delete">
     </form></td>';
