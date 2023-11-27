@@ -10,7 +10,7 @@ while ($row = $result->fetch_assoc()) {
     // Check if the logged-in admin's first name is "admin"
     // If it is, they can delete other admins (excluding themselves)
     if ($admin_first_name === "admin" && $row['first_name'] !== "admin") {
-      $deleteLink = '<button type="submit" class="bg-[#a07f7e] hover:bg-[#864543] text-white py-1 px-2 rounded" name="deleteAdmin" value="' . $row['user_id'] . '">Delete</button>';
+      $deleteLink = '<button type="submit" class="border-[#B85450] border-2 py-2 px-4 shadow-md tracking-wider rounded-2xl bg-[#FF9999] hover:bg-[#F8CECC] font-semibold hover:border-[#C27474] text-[#002951] transition duration-300 ease-in-out text-xs" name="deleteAdmin" value="' . $row['user_id'] . '">Delete</button>';
   } else {
       // Admin with other names or "admin" itself can't delete
       $deleteLink = 'Not Authorized';

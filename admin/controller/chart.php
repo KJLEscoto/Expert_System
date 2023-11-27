@@ -16,13 +16,14 @@ if (isset($_POST['result_id'])) {
     include("../confirm-modal.php");
 }
 
+echo "<div class='flex justify-center mt-5'>";
+echo "<div class='overflow-x-auto w-full'>";
 echo "<table class='w-full bg-white border border-gray-300 rounded-md overflow-hidden shadow-md'>";
 echo "<tr class='bg-gray-200 border-b-2'>";
 echo "<th class='py-2 px-4 border-r-2'>User ID - Name</th>";
 echo "<th class='py-2 px-4 border-r-2'>Result</th>";
 echo "<th class='py-2 px-4 border-r-2'>Diagnosis</th>";
 echo "<th class='py-2 px-4 border-r-2'>Date and Time Taken</th>";
-echo "<th class='py-2 px-4'>Action</th>";
 echo "</tr>";
 
 while ($row = $result->fetch_assoc()) {
@@ -47,16 +48,14 @@ while ($row = $result->fetch_assoc()) {
     echo "<td class='py-2 px-4 border-r-2 text-center border-b'>" . $row['result'] . "</td>";
     echo "<td class='py-2 px-4 border-r-2 border-b'>" . getDiagnosis($row['result']) . "</td>";
     echo "<td class='py-2 px-4 border-r-2 text-center border-b'>" . $row['created_at'] . "</td>";
-    echo '<td class="py-2 px-4 border-r-2 text-center border-b"><form method="post" action="viewResults.php?confirm">
-    <input type="hidden" name="result_id" value="' . $row['result_id'] . '">
-    <input type="submit" class="bg-[#a07f7e] hover:bg-[#864543] text-white py-1 px-2 rounded" value="Delete">
-    </form></td>';
     $countResults++;
 }
 if ($countResults > 0) {
     echo "</tr>";
 }
 echo "</table>";
+echo "</div>";
+echo "</div>";
 
 $conn->close();
 

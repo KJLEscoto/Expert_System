@@ -7,6 +7,26 @@
   <title>List of Admins | Admin</title>
   <link rel="stylesheet" href="../../dist/output.css">
   <link rel="shortcut icon" type="x-icon" href="../../img/sti-logo.png">
+  <style>
+  ::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #000080;
+  }
+  </style>
 </head>
 
 <body class="font-sans bg-[#eeeded] md:px-20 px-5 pb-10 mt-10 tracking-wide">
@@ -33,30 +53,33 @@ include "../controller/adminIncharge.php";
     <input type="text" class="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500"
       id="search" name="user_id" placeholder="ID or Name">
     <input type="button" class="bg-[#9b9595] hover:bg-[#7c7474] text-white py-2 px-4 rounded-md ml-2" value="Search"
-      onclick="searchFunction()">
+      onclick="searchFunctionAdmin()">
     <input type="button" class="bg-[#9b9595] hover:bg-[#7c7474] text-white py-2 px-4 rounded-md ml-2" value="Clear"
-      onclick="clearSearch()">
+      onclick="clearSearchAdmin()">
   </div>
   </p>
-  </div>
-  <table class="w-full bg-white border border-gray-300 rounded-md overflow-hidden shadow-md">
-    <thead class="bg-gray-200 border-b-2">
-      <th class="py-2 px-4 border-r-2">ID</th>
-      <th class="py-2 px-4 border-r-2">Name</th>
-      <th class="py-2 px-4 border-r-2">Email</th>
-      <th class="py-2 px-4 border-r-2">Password</th>
-      <th class="py-2 px-4">Action</th>
+  <div class="flex justify-center mt-5">
+    <div class="overflow-x-auto w-full">
+      <table class="w-full bg-white border border-gray-300 rounded-md overflow-hidden shadow-md">
+        <thead class="bg-gray-200 border-b-2">
+          <th class="py-2 px-4 border-r-2">ID</th>
+          <th class="py-2 px-4 border-r-2">Name</th>
+          <th class="py-2 px-4 border-r-2">Email</th>
+          <th class="py-2 px-4 border-r-2">Password</th>
+          <th class="py-2 px-4">Action</th>
 
-    </thead>
-    <tbody id="adminTableBody">
-      <form action="viewAdmin.php?confirm" method="POST">
-        <?php
+        </thead>
+        <tbody id="adminTableBody">
+          <form action="viewAdmin.php?confirm" method="POST">
+            <?php
         include "../controller/admins.php";
         ?>
-      </form>
+          </form>
 
-    </tbody>
-  </table>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
   <?php if(isset($_POST['deleteAdmin'])) {
     include("../confirm-modal.php");
@@ -65,7 +88,7 @@ include "../controller/adminIncharge.php";
 
 
   <script>
-  function clearSearch() {
+  function clearSearchAdmin() {
     var input, table, tr, i;
 
     // Clear the search input
@@ -80,7 +103,7 @@ include "../controller/adminIncharge.php";
     }
   }
 
-  function searchFunction() {
+  function searchFunctionAdmin() {
     var input, filter, table, tr, td, i, j, txtValue;
     input = document.getElementById("search");
     filter = input.value.toUpperCase();

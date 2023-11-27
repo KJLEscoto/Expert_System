@@ -64,19 +64,19 @@
 
       <div class="max-w-6xl h-auto bg-gray-100 m-10 p-20 overflow-y-auto shadow-lg">
 
-        <section class="flex justify-between mb-20 items-center">
-          <div class="flex items-start">
-            <img class="w-auto h-14 mr-2" src="../img/sti.png" alt="">
-            <h1 class="text-2xl font-bold text-[#005BAB] cursor-default tracking-wide m-auto">
-              <?php echo "College - Davao"; ?>
+        <section class="md:flex block justify-between mb-20 items-center">
+          <div class="flex items-center justify-center">
+            <img class="w-auto md:h-14 h-8 mr-2" src="../img/sti.png" alt="">
+            <h1 class="md:text-2xl text-center text-lg font-bold text-[#005BAB] cursor-default">College - Davao
             </h1>
           </div>
-          <h1 class="text-[#005BAB] font-medium text-2xl">PsycheAssist | BSCS</h1>
+          <hr class="border mb-2 mt-2 md:hidden block">
+          <h1 class="text-[#005BAB] font-medium md:text-2xl text-base md:text-end text-center">PsycheAssist | BSCS</h1>
         </section>
 
         <section class="text-center mb-20">
-          <h1 class="font-bold text-3xl text-[#005BAB]">Self-report Questionnaire Result</h1>
-          <h4 class="font-medium text-[#F4A414]">Beck Depression Inventory (BDI)</h4>
+          <h1 class="font-bold md:text-3xl text-lg text-[#005BAB]">Self-report Questionnaire Result</h1>
+          <h4 class="font-medium text-[#F4A414] md:text-lg text-sm">Beck Depression Inventory (BDI)</h4>
         </section>
 
         <div class="w-full bg-[#005BAB] text-white px-2 mb-3 font-bold">
@@ -124,13 +124,12 @@
                   echo "<p><span>Recommendation:</span> " . $reco . "</p>" ;
                   echo "</div>";
               } else {
-                echo "<p class='text-red-500 px-2'>Invalid result_id. Please provide a valid result_id.</p>";
+                echo "<p class='text-red-500 px-2'><span class='mr-1'>No result were found!</span>The Result ID is unknown.</p>";
               }
           } else {
-              // Redirect the user to the first result if no result_id is provided in the URL
-              if (!empty($resultsArray)) {
+              if ($resultsArray) {
                   $firstResultId = 1;
-                  header("Location: view-results.php?result_id=$firstResultId");
+                  header("Location: {$_SERVER['PHP_SELF']}?result_id=$firstResultId");
                   exit;
               } else {
                   echo "<p class='text-red-500 px-2'><span class='mr-1'>No result were found!</span>It appears that all of your results have been deleted by the Admin. Please return Home and Take Another Response.</p>";
@@ -139,7 +138,7 @@
         ?>
 
         <section class="px-2 mt-7">
-          <h3 class="text-2xl font-bold mb-3 cursor-default text-[#005BAB] text-center">STI 😎 With Healthy
+          <h3 class="md:text-2xl text-lg font-bold mb-3 cursor-default text-[#005BAB] text-center">STI 😎 With Healthy
             Lifestyle
           </h3>
           <p>

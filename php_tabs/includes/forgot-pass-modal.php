@@ -2,7 +2,7 @@
 </div>
 <div
   class="modal fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#d0d9e7] p-6 shadow-lg rounded-lg z-20"
-  style="display: block;">
+  style="display: block; max-height: 80%; overflow-y: scroll;">
   <div class="flex justify-between">
     <h2 class="text-2xl font-semibold text-gray-800 mb-4">Forgot PIN</h2>
     <form action="index.php" method="post">

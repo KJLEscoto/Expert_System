@@ -1,5 +1,24 @@
 <!-- Sidebar -->
+<style>
+::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
 
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #000080;
+}
+</style>
 
 <div class="sidebar" id="mySidebar">
   <div class="flex items-center justify-center">
@@ -16,19 +35,19 @@
       <p>Dashboard</p>
     </div>
   </a>
-  <a href="../viewAdmin/viewUsers.php" onclick="showUsers()">
+  <a href="../viewAdmin/viewUsers.php">
     <div class="flex text-base items-center m-auto">
       <i class="fa fa-users mr-2 -ml-1"></i>
       <p>Users</p>
     </div>
   </a>
-  <a href="../viewAdmin/viewAdmin.php" onclick="showAdmins()">
+  <a href="../viewAdmin/viewAdmin.php">
     <div class="flex text-base items-center m-auto">
       <i class="fa fa-list mr-2"></i>
       <p>Admins</p>
     </div>
   </a>
-  <a href="../viewAdmin/viewResults.php" onclick="showResults()">
+  <a href="../viewAdmin/viewResults.php">
     <div class="flex text-base items-center m-auto">
       <i class="fa fa-th mr-2"></i>
       <p>Results</p>

@@ -18,12 +18,17 @@ if (isset($_POST['email'])) {
 
     unset($_SESSION['admin']);
     $email = validate($_POST['email']);
-
+    $_SESSION['email'] = $email;
+    $error_message = array("Email is required","Invalid Email Format");
+    
     if (empty($email)) {
-        $error_message = "Email is required";
-        header("Location: ../index.php?error=" . urlencode($error_message));
+        header("Location: ../index.php?error=" . urlencode($error_message[0]));
+    } 
+    elseif (!filter_var($_SESSION['email'], FILTER_VALIDATE_EMAIL)) {
+        unset($_SESSION['email']);
+        header("Location: ../index.php?error=" . urlencode($error_message[1]));
     } else {
-        $_SESSION['email'] = $email;
+        $_SESSION['email'];
         $sql = "SELECT * FROM users WHERE email='$email'";
         $result = mysqli_query($conn, $sql);
 

@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 require $_SERVER["DOCUMENT_ROOT"] . '/expert_system/config/database.php';
 
 $sql = "SELECT 
@@ -15,15 +13,26 @@ $sql = "SELECT
 $result = $conn->query($sql);
 $diagnosisCount = $result->fetch_assoc();
 
-echo "<table class='w-full bg-white border border-gray-300 rounded-md overflow-hidden shadow-md'>";
-echo "<tr class='bg-gray-200 border-b-2'>";
-foreach ($diagnosisCount as $diagnosis => $count) {
-    echo "<th class='py-2 px-4 border-r-2 text-center'>$diagnosis</th>";
-}
-echo "</tr>";
-echo "<tr>";
-foreach ($diagnosisCount as $count) {
-    echo "<td class='py-2 px-4 border-r-2 text-center border-b'>$count</td>";
-}
-echo "</tr>";
-echo "</table>";
+// Calculate the total count
+$totalDiagnosisCount = array_sum($diagnosisCount);
+?>
+
+<div class="bg-gray-100 p-4 rounded-md shadow-md mb-4">
+  <h6 class="md:text-lg text-sm text-gray-800"><span class="font-bold">Total Diagnosis Count:</span>
+    <?php echo $totalDiagnosisCount; ?></h6>
+</div>
+
+<div class="overflow-y-auto">
+  <table class='w-full bg-white border border-gray-300 rounded-md shadow-md'>
+    <tbody>
+      <?php
+      foreach ($diagnosisCount as $diagnosis => $count) {
+        echo "<tr>";
+        echo "<th class='py-2 md:text-base text-sm font-normal px-4 border-2 text-start sm:table-cell'>$diagnosis</th>";
+        echo "<td class='py-2 md:text-base text-sm px-4 text-center border-b-2 sm:table-cell'>$count</td>";
+        echo "</tr>";
+      }
+      ?>
+    </tbody>
+  </table>
+</div>

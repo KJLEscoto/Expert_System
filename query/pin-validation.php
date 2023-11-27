@@ -73,7 +73,7 @@ function handleSuccessfulLogin($result) {
         $_SESSION['existing-email'] = true;
         header("Location: ../index.php?instruction=true");
     } else {
-        header("Location: ../php_tabs/view-results.php");
+        header("Location: ../php_tabs/view-results.php?result_id=1");
     }
 
     exit();
